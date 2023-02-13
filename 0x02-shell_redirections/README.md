@@ -2,3 +2,4 @@
 a script that displays a confused smiley "(Ôo)'
 a script that displays the content of the /etc/passwd file
 a script that display the content of /etc/passwd and /etc/hosts
+a script that display the last 10 lines of /etc/passwd
