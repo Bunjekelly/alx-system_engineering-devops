@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# A script to configure SSH client to my server without password
+
+Host ubuntu@3.90.84.234
+identityFile ~/.ssh/school
+passwordAuthentication no
