@@ -7,6 +7,5 @@ touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
 touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-set_header='add_header X-Served-By 257227-web-02;'
-sudo sed -i '/location \/ {/a '"$set_header" /etc/nginx/sites-available/default
+sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 sudo service nginx restart
