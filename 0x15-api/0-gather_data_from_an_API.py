@@ -10,8 +10,8 @@ if __name__ == '__main__':
     api_url = 'http://jsonplaceholder.typicode.com'
     employee_url = '{}/users/{}'.format(api_url, user_id)
     tasks_url = '{}/todos?userId={}'.format(api_url, user_id)
-    employee = requests.get('{}'.format(employee_url)).json()
-    tasks = requests.get('{}'.format(tasks_url)).json()
+    employee = requests.get(employee_url).json()
+    tasks = requests.get(tasks_url).json()
 
     tasks_completed = 0
     for task in tasks:
