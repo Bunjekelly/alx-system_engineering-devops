@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" this is a python script that gets data from a REST API"""
+"""this is a python script that gets data from a REST API"""
 
 import requests
 import sys
@@ -14,13 +14,13 @@ if __name__ == '__main__':
 
     tasks_completed = []
     for task in tasks:
-        if task.get("completed"):
-            tasks_completed.append(task.get("title"))
+        if task["completed"]:
+            tasks_completed.append(task["title"])
 
     completed_count = len(tasks_completed)
     total_count = len(tasks)
 
     print("Employee {} is done with tasks({}/{}):".format(
-        employee.get("name"), completed_count, total_count))
+        employee["name"], completed_count, total_count))
     for task in tasks_completed:
         print("\t" + " " + task)
