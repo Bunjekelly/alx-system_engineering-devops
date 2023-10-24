@@ -12,20 +12,15 @@ if __name__ == '__main__':
     employee = requests.get(f'{employee_url}').json()
     tasks = requests.get(f'{tasks_url}').json()
 
-    tasks_completed = 0
-    total_tasks = 0
-
-    for task in tasks:
-        total_tasks += 1
-        if task.get("completed"):
-            tasks_completed += 1
-
-    employee_name = employee.get('name')
-    title = task.get('title')
-
-    print("Employee {} is done with tasks({}/{}):"
-          .format(employee_name, tasks, total_tasks))
-
+    tasks_completed = []
     for task in tasks:
         if task.get("completed"):
-            print("\t {}".format(title))
+            tasks_completed.append(task.get("title"))
+
+    completed_count = len(tasks_completed)
+    total_count = len(tasks)
+
+    print("Employee {} is done with tasks({}/{}):".format(
+        employee.get("name"), completed_count, total_count))
+    for task in tasks_completed:
+        print("\t" + task)
