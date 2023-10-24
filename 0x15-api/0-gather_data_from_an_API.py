@@ -6,7 +6,7 @@ import sys
 
 if __name__ == '__main__':
     user_id = sys.argv[1]
-    
+
     api_url = 'http://jsonplaceholder.typicode.com'
     employee_url = '{}/users/{}'.format(api_url, user_id)
     tasks_url = '{}/todos?userId={}'.format(api_url, user_id)
