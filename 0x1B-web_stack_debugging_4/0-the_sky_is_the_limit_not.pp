@@ -2,7 +2,7 @@
 
 exec {'fixing':
   provider => shell,
-  command => "sed -i 's/15/unlimited/' /etc/default/nginx",
+  command  => "sed -i 's/15/unlimited/' /etc/default/nginx",
   before   => Exec['restart'],
 }
 
